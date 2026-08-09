@@ -1,0 +1,754 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Birth Certificate | Digital Gram Panchayat Services</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <!-- Common CSS -->
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+    <!-- Dashboard CSS -->
+    <link
+        rel="stylesheet"
+        href="../css/dashboard.css"
+    >
+
+</head>
+
+
+<body class="dashboard-page">
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="dashboard-sidebar">
+
+        <div class="sidebar-brand">
+
+            <a href="../index.html">
+
+                <span class="sidebar-brand-icon">
+                    <i class="bi bi-building"></i>
+                </span>
+
+                <span class="sidebar-brand-text">
+
+                    <strong>
+                        Digital Gram
+                    </strong>
+
+                    <small>
+                        Panchayat Services
+                    </small>
+
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <span class="sidebar-section-title">
+                MAIN MENU
+            </span>
+
+
+            <a
+                href="dashboard.html"
+                class="sidebar-link"
+            >
+
+                <i class="bi bi-grid-1x2"></i>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a
+                href="services.html"
+                class="sidebar-link active"
+            >
+
+                <i class="bi bi-grid"></i>
+
+                <span>
+                    Services
+                </span>
+
+            </a>
+
+
+            <a
+                href="applications.html"
+                class="sidebar-link"
+            >
+
+                <i class="bi bi-file-earmark-text"></i>
+
+                <span>
+                    My Applications
+                </span>
+
+            </a>
+
+
+            <a
+                href="#"
+                class="sidebar-link"
+            >
+
+                <i class="bi bi-file-earmark-check"></i>
+
+                <span>
+                    My Certificates
+                </span>
+
+            </a>
+
+
+            <span class="sidebar-section-title">
+                SUPPORT
+            </span>
+
+
+            <a
+                href="#"
+                class="sidebar-link"
+            >
+
+                <i class="bi bi-robot"></i>
+
+                <span>
+                    AI Assistant
+                </span>
+
+                <span class="ai-dot"></span>
+
+            </a>
+
+
+            <a
+                href="#"
+                class="sidebar-link"
+            >
+
+                <i class="bi bi-question-circle"></i>
+
+                <span>
+                    Help & Support
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a
+                href="#"
+                class="sidebar-link"
+            >
+
+                <i class="bi bi-gear"></i>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+
+            <button
+                class="sidebar-logout"
+                id="logoutButton"
+            >
+
+                <i class="bi bi-box-arrow-left"></i>
+
+                <span>
+                    Logout
+                </span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <div class="dashboard-content">
+
+
+        <!-- TOPBAR -->
+
+        <header class="dashboard-topbar">
+
+            <button
+                class="mobile-menu-button"
+                id="mobileMenuButton"
+            >
+
+                <i class="bi bi-list"></i>
+
+            </button>
+
+
+            <div class="topbar-search">
+
+                <i class="bi bi-search"></i>
+
+                <input
+                    type="search"
+                    placeholder="Search..."
+                >
+
+            </div>
+
+
+            <div class="topbar-actions">
+
+                <button
+                    class="topbar-icon-button"
+                    title="Notifications"
+                >
+
+                    <i class="bi bi-bell"></i>
+
+                    <span class="notification-dot"></span>
+
+                </button>
+
+
+                <button
+                    class="topbar-profile"
+                >
+
+                    <span class="profile-avatar">
+                        SL
+                    </span>
+
+                    <span class="profile-info">
+
+                        <strong>
+                            Shravani
+                        </strong>
+
+                        <small>
+                            Citizen
+                        </small>
+
+                    </span>
+
+                    <i class="bi bi-chevron-down"></i>
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- APPLICATION CONTENT -->
+
+        <main class="dashboard-main birth-application-main">
+
+
+            <!-- PAGE HEADER -->
+
+            <div class="birth-page-header">
+
+                <a
+                    href="services.html"
+                    class="back-link"
+                >
+
+                    <i class="bi bi-arrow-left"></i>
+
+                    Back to Services
+
+                </a>
+
+
+                <span>
+                    GRAM PANCHAYAT SERVICE
+                </span>
+
+                <h1>
+                    Birth Certificate Application
+                </h1>
+
+                <p>
+                    Fill in the details below to apply for a birth certificate.
+                </p>
+
+            </div>
+
+
+            <!-- APPLICATION FORM -->
+
+            <form
+                id="birthCertificateForm"
+                class="birth-application-form"
+            >
+
+
+                <!-- CHILD INFORMATION -->
+
+                <section class="form-section">
+
+                    <div class="form-section-title">
+
+                        <div class="form-section-icon">
+
+                            <i class="bi bi-person"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Child Information
+                            </h2>
+
+                            <p>
+                                Enter the basic details of the child.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="form-field">
+
+                            <label for="childName">
+                                Child Full Name
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="childName"
+                                name="childName"
+                                placeholder="Enter child's full name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label for="dateOfBirth">
+                                Date of Birth
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="date"
+                                id="dateOfBirth"
+                                name="dateOfBirth"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label for="gender">
+                                Gender
+                                <span>*</span>
+                            </label>
+
+                            <select
+                                id="gender"
+                                name="gender"
+                                required
+                            >
+
+                                <option value="">
+                                    Select gender
+                                </option>
+
+                                <option value="Male">
+                                    Male
+                                </option>
+
+                                <option value="Female">
+                                    Female
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label for="birthPlace">
+                                Place of Birth
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="birthPlace"
+                                name="birthPlace"
+                                placeholder="Enter place of birth"
+                                required
+                            >
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+
+                <!-- PARENT INFORMATION -->
+
+                <section class="form-section">
+
+                    <div class="form-section-title">
+
+                        <div class="form-section-icon">
+
+                            <i class="bi bi-people"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Parent Information
+                            </h2>
+
+                            <p>
+                                Enter the details of the child's parents.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="form-field">
+
+                            <label for="fatherName">
+                                Father's Full Name
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="fatherName"
+                                name="fatherName"
+                                placeholder="Enter father's full name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label for="motherName">
+                                Mother's Full Name
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="motherName"
+                                name="motherName"
+                                placeholder="Enter mother's full name"
+                                required
+                            >
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+
+                <!-- ADDRESS -->
+
+                <section class="form-section">
+
+                    <div class="form-section-title">
+
+                        <div class="form-section-icon">
+
+                            <i class="bi bi-geo-alt"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Address Information
+                            </h2>
+
+                            <p>
+                                Enter the current residential address.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="form-field full-width">
+
+                            <label for="address">
+                                Full Address
+                                <span>*</span>
+                            </label>
+
+                            <textarea
+                                id="address"
+                                name="address"
+                                rows="3"
+                                placeholder="Enter complete address"
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label for="village">
+                                Village
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="village"
+                                name="village"
+                                placeholder="Enter village name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label for="district">
+                                District
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="district"
+                                name="district"
+                                placeholder="Enter district"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-field">
+
+                            <label for="pincode">
+                                PIN Code
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="pincode"
+                                name="pincode"
+                                maxlength="6"
+                                placeholder="Enter 6-digit PIN code"
+                                required
+                            >
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+
+                <!-- DOCUMENT -->
+
+                <section class="form-section">
+
+                    <div class="form-section-title">
+
+                        <div class="form-section-icon">
+
+                            <i class="bi bi-file-earmark-arrow-up"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Supporting Document
+                            </h2>
+
+                            <p>
+                                Upload a supporting document if required.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label for="document">
+                            Supporting Document
+                        </label>
+
+                        <input
+                            type="file"
+                            id="document"
+                            name="document"
+                            accept=".pdf,.jpg,.jpeg,.png"
+                        >
+
+                        <small>
+                            Accepted formats: PDF, JPG, JPEG, PNG
+                        </small>
+
+                    </div>
+
+                </section>
+
+
+                <!-- DECLARATION -->
+
+                <div class="form-declaration">
+
+                    <input
+                        type="checkbox"
+                        id="declaration"
+                        required
+                    >
+
+                    <label for="declaration">
+
+                        I confirm that the information provided
+                        above is correct to the best of my knowledge.
+
+                    </label>
+
+                </div>
+
+
+                <!-- BUTTONS -->
+
+                <div class="form-actions">
+
+                    <a
+                        href="services.html"
+                        class="form-cancel-button"
+                    >
+
+                        Cancel
+
+                    </a>
+
+
+                    <button
+                        type="submit"
+                        class="form-submit-button"
+                    >
+
+                        <i class="bi bi-send"></i>
+
+                        Submit Application
+
+                    </button>
+
+                </div>
+
+
+            </form>
+
+
+        </main>
+
+
+        <!-- FOOTER -->
+
+        <footer class="dashboard-footer">
+
+            <span>
+                © 2026 Digital Gram Panchayat Services
+            </span>
+
+            <span>
+                Digital Governance • Secure • Transparent
+            </span>
+
+        </footer>
+
+
+    </div>
+
+
+    <script src="../js/dashboard.js"></script>
+
+</body>
+
+</html>
+```
