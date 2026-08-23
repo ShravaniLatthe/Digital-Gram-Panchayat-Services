@@ -181,53 +181,169 @@ if (serviceSearch) {
 
 }
 
-/* =========================================================
-   BIRTH CERTIFICATE APPLICATION
-   ========================================================= */
-
-const birthCertificateForm = document.getElementById("birthCertificateForm");
-
-if (birthCertificateForm) {
-
-    birthCertificateForm.addEventListener("submit", function (event) {
-
-        event.preventDefault();
-
-        const declaration = document.getElementById("declaration");
-
-        if (!declaration.checked) {
-
-            alert("Please confirm the declaration before submitting.");
-
-            return;
-        }
 
 
-        const pincode = document.getElementById("pincode").value.trim();
+function viewApplication(applicationId, serviceName, date, status) {
 
-        if (!/^[0-9]{6}$/.test(pincode)) {
+    const modal = document.getElementById("applicationModal");
 
-            alert("Please enter a valid 6-digit PIN code.");
+    const modalService = document.getElementById("modalService");
+    const modalApplicationId = document.getElementById("modalApplicationId");
+    const modalDate = document.getElementById("modalDate");
+    const modalStatus = document.getElementById("modalStatus");
 
-            return;
-        }
+    if (!modal) {
+        return;
+    }
+
+    modalService.textContent = serviceName;
+    modalApplicationId.textContent = applicationId;
+    modalDate.textContent = date;
+    modalStatus.textContent = status;
+
+    modal.classList.add("show");
+
+}
+
+const applicationModal = document.getElementById("applicationModal");
+
+const closeApplicationModal =
+    document.getElementById("closeApplicationModal");
+
+const closeApplicationModalBottom =
+    document.getElementById("closeApplicationModalBottom");
 
 
-        /*
-         * Frontend demo only.
-         *
-         * Later this section will send the form
-         * data to your friend's FastAPI backend.
-         */
+if (closeApplicationModal) {
 
-        alert(
-            "Application submitted successfully!\n\n" +
-            "Your application has been recorded."
-        );
+    closeApplicationModal.addEventListener("click", function () {
 
-
-        birthCertificateForm.reset();
+        applicationModal.classList.remove("show");
 
     });
+
+}
+
+
+if (closeApplicationModalBottom) {
+
+    closeApplicationModalBottom.addEventListener("click", function () {
+
+        applicationModal.classList.remove("show");
+
+    });
+
+}
+
+
+if (applicationModal) {
+
+    applicationModal.addEventListener("click", function (event) {
+
+        if (event.target === applicationModal) {
+
+            applicationModal.classList.remove("show");
+
+        }
+
+    });
+
+}
+
+// =========================================================
+// BIRTH CERTIFICATE APPLICATION SUBMISSION
+// =========================================================
+
+const birthCertificateForm =
+    document.getElementById("birthCertificateForm");
+
+const applicationSuccess =
+    document.getElementById("applicationSuccess");
+
+
+if (birthCertificateForm && applicationSuccess) {
+
+    birthCertificateForm.addEventListener(
+        "submit",
+        function (event) {
+
+            event.preventDefault();
+
+            // Check declaration
+            const declaration =
+                document.getElementById("declaration");
+
+            if (declaration && !declaration.checked) {
+
+                alert(
+                    "Please confirm the declaration before submitting."
+                );
+
+                return;
+            }
+
+
+            // Check PIN code
+            const pincode =
+                document.getElementById("pincode");
+
+            if (
+                pincode &&
+                !/^[0-9]{6}$/.test(
+                    pincode.value.trim()
+                )
+            ) {
+
+                alert(
+                    "Please enter a valid 6-digit PIN code."
+                );
+
+                return;
+            }
+
+
+            // Generate temporary application ID
+            const applicationId =
+                "GP-" +
+                new Date().getFullYear() +
+                "-" +
+                Math.floor(
+                    10000 + Math.random() * 90000
+                );
+
+
+            // Display application ID
+            const successApplicationId =
+                document.getElementById(
+                    "successApplicationId"
+                );
+
+            if (successApplicationId) {
+
+                successApplicationId.textContent =
+                    applicationId;
+
+            }
+
+
+            // Hide form
+            birthCertificateForm.style.display =
+                "none";
+
+
+            // Show success message
+            applicationSuccess.classList.add(
+                "show"
+            );
+
+
+            // Scroll to success message
+            applicationSuccess.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        }
+    );
 
 }

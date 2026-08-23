@@ -17,6 +17,7 @@
 
     <title>Login | Digital Gram Panchayat Services</title>
 
+
     <!-- Bootstrap -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -32,13 +33,13 @@
     <!-- Main CSS -->
     <link
         rel="stylesheet"
-        href="../css/style.css"
+        href="css/style.css"
     >
 
     <!-- Authentication CSS -->
     <link
         rel="stylesheet"
-        href="../css/auth.css"
+        href="css/auth.css"
     >
 
 </head>
@@ -54,7 +55,7 @@
         <div class="container">
 
             <a
-                href="../index.html"
+                href="index.html"
                 class="auth-brand"
             >
 
@@ -78,7 +79,7 @@
 
 
             <a
-                href="../index.html"
+                href="index.html"
                 class="back-home"
             >
 
@@ -103,7 +104,7 @@
             <div class="auth-layout">
 
 
-                <!-- ================= LEFT PANEL ================= -->
+                <!-- ================= LEFT SIDE ================= -->
 
                 <section class="auth-info">
 
@@ -134,10 +135,9 @@
 
 
 
-                    <!-- FEATURES -->
+                    <!-- BENEFIT 1 -->
 
                     <div class="auth-benefits">
-
 
                         <div class="auth-benefit">
 
@@ -164,6 +164,8 @@
 
 
 
+                        <!-- BENEFIT 2 -->
+
                         <div class="auth-benefit">
 
                             <div class="auth-benefit-icon">
@@ -189,6 +191,8 @@
 
 
 
+                        <!-- BENEFIT 3 -->
+
                         <div class="auth-benefit">
 
                             <div class="auth-benefit-icon">
@@ -212,9 +216,11 @@
 
                         </div>
 
-
                     </div>
 
+
+
+                    <!-- SECURITY NOTE -->
 
                     <div class="auth-note">
 
@@ -226,7 +232,6 @@
                         </span>
 
                     </div>
-
 
                 </section>
 
@@ -269,7 +274,7 @@
 
 
 
-                    <!-- LOGIN FORM -->
+                    <!-- ================= LOGIN FORM ================= -->
 
                     <form
                         id="loginForm"
@@ -334,15 +339,6 @@
 
                                 </label>
 
-
-                                <a
-                                    href="#"
-                                    class="forgot-password"
-                                    id="forgotPassword"
-                                >
-                                    Forgot password?
-                                </a>
-
                             </div>
 
 
@@ -381,7 +377,7 @@
 
 
 
-                        <!-- REMEMBER -->
+                        <!-- REMEMBER ME -->
 
                         <div class="login-options">
 
@@ -402,7 +398,7 @@
 
 
 
-                        <!-- SUBMIT -->
+                        <!-- LOGIN BUTTON -->
 
                         <button
                             type="submit"
@@ -410,7 +406,7 @@
                             id="loginButton"
                         >
 
-                            <span id="loginButtonText">
+                            <span>
                                 Login to Account
                             </span>
 
@@ -423,7 +419,7 @@
 
 
 
-                    <!-- REGISTER -->
+                    <!-- SIGN UP LINK -->
 
                     <div class="auth-switch">
 
@@ -466,9 +462,165 @@
 
 
 
-    <!-- Authentication JavaScript -->
+    <!-- ================= SIMPLE LOGIN JAVASCRIPT ================= -->
 
-    <script src="../js/auth.js"></script>
+    <script>
+
+        const loginForm =
+            document.getElementById("loginForm");
+
+        const loginEmail =
+            document.getElementById("loginEmail");
+
+        const loginPassword =
+            document.getElementById("loginPassword");
+
+        const loginMessage =
+            document.getElementById("loginMessage");
+
+        const passwordToggle =
+            document.getElementById("loginPasswordToggle");
+
+
+        /* ================= PASSWORD SHOW / HIDE ================= */
+
+        if (passwordToggle) {
+
+            passwordToggle.addEventListener(
+                "click",
+                function () {
+
+                    if (loginPassword.type === "password") {
+
+                        loginPassword.type = "text";
+
+                        passwordToggle.innerHTML =
+                            '<i class="bi bi-eye-slash"></i>';
+
+                        passwordToggle.setAttribute(
+                            "aria-label",
+                            "Hide password"
+                        );
+
+                    } else {
+
+                        loginPassword.type = "password";
+
+                        passwordToggle.innerHTML =
+                            '<i class="bi bi-eye"></i>';
+
+                        passwordToggle.setAttribute(
+                            "aria-label",
+                            "Show password"
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+
+
+        /* ================= LOGIN FORM ================= */
+
+        if (loginForm) {
+
+            loginForm.addEventListener(
+                "submit",
+                function (event) {
+
+                    event.preventDefault();
+
+
+                    const email =
+                        loginEmail.value.trim();
+
+                    const password =
+                        loginPassword.value.trim();
+
+
+                    /* Clear previous messages */
+
+                    loginMessage.textContent = "";
+
+                    loginMessage.className =
+                        "form-message";
+
+
+                    /* Email validation */
+
+                    if (email === "") {
+
+                        loginMessage.textContent =
+                            "Please enter your email address.";
+
+                        loginMessage.classList.add(
+                            "show",
+                            "error"
+                        );
+
+                        loginEmail.focus();
+
+                        return;
+
+                    }
+
+
+                    /* Password validation */
+
+                    if (password === "") {
+
+                        loginMessage.textContent =
+                            "Please enter your password.";
+
+                        loginMessage.classList.add(
+                            "show",
+                            "error"
+                        );
+
+                        loginPassword.focus();
+
+                        return;
+
+                    }
+
+
+                    /* ================================
+                       FRONTEND DEMO LOGIN
+
+                       Backend authentication will
+                       be connected later.
+                    ================================= */
+
+                    loginMessage.textContent =
+                        "Login successful! Redirecting...";
+
+                    loginMessage.classList.add(
+                        "show",
+                        "success"
+                    );
+
+
+                    /* Go to Dashboard */
+
+                    setTimeout(
+                        function () {
+
+                            window.location.href =
+                                "dashboard.html";
+
+                        },
+                        800
+                    );
+
+                }
+            );
+
+        }
+
+    </script>
+
 
 </body>
 

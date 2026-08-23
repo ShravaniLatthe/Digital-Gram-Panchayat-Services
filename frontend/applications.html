@@ -31,178 +31,20 @@
     <!-- Main CSS -->
     <link
         rel="stylesheet"
-        href="../css/style.css"
+        href="css/style.css"
     >
 
     <!-- Dashboard CSS -->
     <link
         rel="stylesheet"
-        href="../css/dashboard.css"
+        href="css/dashboard.css"
     >
 
-    <style>
-        .applications-page {
-            padding: 35px;
-        }
-
-        .applications-header {
-            margin-bottom: 28px;
-        }
-
-        .applications-header span {
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            color: #6c757d;
-        }
-
-        .applications-header h1 {
-            margin: 6px 0;
-            font-size: 30px;
-            font-weight: 700;
-        }
-
-        .applications-header p {
-            margin: 0;
-            color: #6c757d;
-            font-size: 15px;
-        }
-
-        .application-card {
-            background: #ffffff;
-            border: 1px solid #e8e8e8;
-            border-radius: 16px;
-            padding: 22px;
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-            transition: 0.2s ease;
-        }
-
-        .application-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-        }
-
-        .application-left {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .application-icon-box {
-            width: 52px;
-            height: 52px;
-            border-radius: 13px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #eef5ff;
-            color: #1769aa;
-            font-size: 22px;
-            flex-shrink: 0;
-        }
-
-        .application-details h3 {
-            font-size: 17px;
-            margin: 0 0 5px;
-            font-weight: 700;
-        }
-
-        .application-details p {
-            margin: 0;
-            color: #777;
-            font-size: 13px;
-        }
-
-        .application-right {
-            text-align: right;
-            min-width: 130px;
-        }
-
-        .application-id {
-            display: block;
-            color: #777;
-            font-size: 12px;
-            margin-bottom: 8px;
-        }
-
-        .status {
-            display: inline-block;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        .status.pending {
-            background: #fff4d6;
-            color: #9a6b00;
-        }
-
-        .status.approved {
-            background: #e4f7ec;
-            color: #187a45;
-        }
-
-        .status.processing {
-            background: #e6f1ff;
-            color: #1769aa;
-        }
-
-        .status.rejected {
-            background: #fde8e8;
-            color: #b42318;
-        }
-
-        .empty-state {
-            background: #ffffff;
-            border: 1px solid #e8e8e8;
-            border-radius: 16px;
-            padding: 50px 20px;
-            text-align: center;
-            display: none;
-        }
-
-        .empty-state i {
-            font-size: 45px;
-            color: #aaa;
-            margin-bottom: 15px;
-        }
-
-        .empty-state h3 {
-            font-size: 20px;
-            margin-bottom: 8px;
-        }
-
-        .empty-state p {
-            color: #777;
-            font-size: 14px;
-        }
-
-        @media (max-width: 768px) {
-
-            .applications-page {
-                padding: 20px;
-            }
-
-            .application-card {
-                align-items: flex-start;
-                flex-direction: column;
-            }
-
-            .application-right {
-                text-align: left;
-                margin-left: 68px;
-            }
-
-            .applications-header h1 {
-                font-size: 25px;
-            }
-        }
-    </style>
+    <!-- Applications CSS -->
+    <link
+    rel="stylesheet"
+    href="css/applications.css"
+    >
 
 </head>
 
@@ -214,7 +56,7 @@
 
         <div class="sidebar-brand">
 
-            <a href="../index.html">
+            <a href="index.html">
 
                 <span class="sidebar-brand-icon">
                     <i class="bi bi-building"></i>
@@ -284,15 +126,15 @@
                     My Applications
                 </span>
 
-                <span class="sidebar-badge">
-                    3
+                <span class="sidebar-badge" id="applicationCount">
+                    0
                 </span>
 
             </a>
 
 
             <a
-                href="#"
+                href="certificates.html"
                 class="sidebar-link"
             >
 
@@ -327,7 +169,7 @@
 
 
             <a
-                href="#"
+                href="help.html"
                 class="sidebar-link"
             >
 
@@ -432,6 +274,11 @@
                         Pending
                     </span>
 
+                    <button class="view-details-btn"
+                            onclick="viewApplication('GP-2026-00124', 'Residence Certificate', '02 August 2026', 'Pending')">
+                        View Details
+                    </button>
+
                 </div>
 
             </div>
@@ -471,6 +318,11 @@
                     <span class="status approved">
                         Approved
                     </span>
+
+                    <button class="view-details-btn"
+                            onclick="viewApplication('GP-2026-00118', 'Income Certificate', '28 July 2026', 'Approved')">
+                        View Details
+                    </button>
 
                 </div>
 
@@ -512,6 +364,11 @@
                         Processing
                     </span>
 
+                    <button class="view-details-btn"
+                            onclick="viewApplication('GP-2026-00097', 'Water Connection', '21 July 2026', 'Processing')">
+                        View Details
+                    </button>
+
                 </div>
 
             </div>
@@ -552,6 +409,11 @@
                         Approved
                     </span>
 
+                    <button class="view-details-btn"
+                            onclick="viewApplication('GP-2026-00076', 'Property Service', '15 July 2026', 'Approved')">
+                        View Details
+                    </button>
+
                 </div>
 
             </div>
@@ -578,7 +440,220 @@
 
     </main>
 
+    <!-- APPLICATION DETAILS POPUP -->
 
+<div class="application-modal" id="applicationModal">
+
+    <div class="application-modal-box">
+
+        <div class="application-modal-header">
+
+            <div>
+                <span class="modal-label">APPLICATION DETAILS</span>
+
+                <h2>Application Details</h2>
+            </div>
+
+            <button
+                class="modal-close-btn"
+                id="closeApplicationModal"
+                type="button"
+            >
+                <i class="bi bi-x-lg"></i>
+            </button>
+
+        </div>
+
+
+        <div class="application-modal-body">
+
+            <div class="modal-detail">
+
+                <span>Service</span>
+
+                <strong id="modalService">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="modal-detail">
+
+                <span>Application ID</span>
+
+                <strong id="modalApplicationId">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="modal-detail-row">
+
+                <div class="modal-detail">
+
+                    <span>Submitted On</span>
+
+                    <strong id="modalDate">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="modal-detail">
+
+                    <span>Status</span>
+
+                    <strong id="modalStatus">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="application-modal-footer">
+
+            <button
+                type="button"
+                class="modal-close-action"
+                id="closeApplicationModalBottom"
+            >
+                Close
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/dashboard.js"></script>
+<script>
+
+    const savedApplication =
+        localStorage.getItem(
+            "birthCertificateApplication"
+        );
+
+
+    const applicationCount =
+        document.getElementById(
+            "applicationCount"
+        );
+
+
+    if (savedApplication) {
+
+        const application =
+            JSON.parse(savedApplication);
+
+
+        /*
+         * Create a new application card
+         */
+
+        const applicationsPage =
+            document.querySelector(
+                ".applications-page"
+            );
+
+
+        const emptyState =
+            document.querySelector(
+                ".empty-state"
+            );
+
+
+        const applicationCard =
+            document.createElement("div");
+
+
+        applicationCard.className =
+            "application-card";
+
+
+        applicationCard.innerHTML = `
+
+            <div class="application-left">
+
+                <div class="application-icon-box">
+
+                    <i class="bi bi-person-vcard"></i>
+
+                </div>
+
+                <div class="application-details">
+
+                    <h3>
+                        ${application.service}
+                    </h3>
+
+                    <p>
+                        Submitted on ${application.date}
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="application-right">
+
+                <span class="application-id">
+                    ${application.id}
+                </span>
+
+                <span class="status pending">
+                    ${application.status}
+                </span>
+
+                <button
+                    class="view-details-btn"
+                    onclick="viewApplication(
+                        '${application.id}',
+                        '${application.service}',
+                        '${application.date}',
+                        '${application.status}'
+                    )"
+                >
+                    View Details
+                </button>
+
+            </div>
+
+        `;
+
+
+        /*
+         * Add the new application
+         * before the empty state
+         */
+
+        applicationsPage.insertBefore(
+            applicationCard,
+            emptyState
+        );
+
+
+        /*
+         * Update application count
+         */
+
+        if (applicationCount) {
+
+            applicationCount.textContent = "1";
+
+        }
+
+    }
+
+</script>
 </body>
 
 </html>
