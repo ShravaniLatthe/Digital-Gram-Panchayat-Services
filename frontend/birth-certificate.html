@@ -49,7 +49,7 @@
 
         <div class="sidebar-brand">
 
-            <a href="../index.html">
+            <a href="index.html">
 
                 <span class="sidebar-brand-icon">
                     <i class="bi bi-building"></i>
@@ -318,10 +318,7 @@
 
             <!-- APPLICATION FORM -->
 
-            <form
-                id="birthCertificateForm"
-                class="birth-application-form"
-            >
+            <form id="birthCertificateForm" class="birth-application-form">
 
 
                 <!-- CHILD INFORMATION -->
@@ -724,6 +721,57 @@
 
             </form>
 
+            <div class="application-success" id="applicationSuccess">
+
+    <div class="success-icon">
+        <i class="bi bi-check-lg"></i>
+    </div>
+
+    <span class="success-label">
+        APPLICATION SUBMITTED
+    </span>
+
+    <h2>
+        Application Submitted Successfully!
+    </h2>
+
+    <p>
+        Your Birth Certificate application has been submitted successfully.
+    </p>
+
+    <div class="success-application-id">
+
+        <span>
+            Application ID
+        </span>
+
+        <strong id="successApplicationId">
+            GP-2026-00125
+        </strong>
+
+    </div>
+
+    <div class="success-actions">
+
+        <a
+            href="applications.html"
+            class="success-primary-btn"
+        >
+            <i class="bi bi-file-earmark-text"></i>
+            View My Applications
+        </a>
+
+        <a
+            href="services.html"
+            class="success-secondary-btn"
+        >
+            Back to Services
+        </a>
+
+    </div>
+
+</div>
+
 
         </main>
 
@@ -747,7 +795,155 @@
 
 
     <script src="js/dashboard.js"></script>
+<<<<<<< HEAD
     <script src="js/birth-certificate.js"></script>
+=======
+
+<script>
+
+    const birthCertificateForm =
+        document.getElementById("birthCertificateForm");
+
+    const applicationSuccess =
+        document.getElementById("applicationSuccess");
+
+
+    if (birthCertificateForm && applicationSuccess) {
+
+        birthCertificateForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                /* =========================
+                   DECLARATION CHECK
+                ========================= */
+
+                const declaration =
+                    document.getElementById("declaration");
+
+                if (!declaration.checked) {
+
+                    alert(
+                        "Please confirm the declaration before submitting."
+                    );
+
+                    return;
+
+                }
+
+
+                /* =========================
+                   PIN CODE CHECK
+                ========================= */
+
+                const pincode =
+                    document.getElementById("pincode").value.trim();
+
+
+                if (!/^[0-9]{6}$/.test(pincode)) {
+
+                    alert(
+                        "Please enter a valid 6-digit PIN code."
+                    );
+
+                    document
+                        .getElementById("pincode")
+                        .focus();
+
+                    return;
+
+                }
+
+
+                /* =========================
+                   GENERATE APPLICATION ID
+                ========================= */
+
+                const applicationId =
+                    "GP-" +
+                    new Date().getFullYear() +
+                    "-" +
+                    Math.floor(
+                        10000 +
+                        Math.random() * 90000
+                    );
+
+                const applicationData = {
+                    id: applicationId,
+                    service: "Birth Certificate",
+                    date: new Date().toLocaleDateString(
+                        "en-GB",
+                        {
+                            day: "2-digit",
+                            month: "long",
+                            year: "numeric"
+                        }
+                    ),
+                    status: "Pending"
+                };
+
+                localStorage.setItem(
+                    "birthCertificateApplication",
+                    JSON.stringify(applicationData)
+                );
+
+
+                /* =========================
+                   SHOW APPLICATION ID
+                ========================= */
+
+                const successApplicationId =
+                    document.getElementById(
+                        "successApplicationId"
+                    );
+
+
+                if (successApplicationId) {
+
+                    successApplicationId.textContent =
+                        applicationId;
+
+                }
+
+
+                /* =========================
+                   HIDE FORM
+                ========================= */
+
+                birthCertificateForm.style.display =
+                    "none";
+
+
+                /* =========================
+                   SHOW SUCCESS MESSAGE
+                ========================= */
+
+                applicationSuccess.classList.add(
+                    "show"
+                );
+
+
+                /* =========================
+                   SCROLL TO SUCCESS
+                ========================= */
+
+                applicationSuccess.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+
+            }
+        );
+
+    }
+
+</script>
+
+</body>
+>>>>>>> 5ce6b152fe98e33a1560581228f01780d0d4ca79
 
 </body>
 

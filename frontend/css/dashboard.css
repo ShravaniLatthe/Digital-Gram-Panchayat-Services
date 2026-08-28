@@ -1807,3 +1807,436 @@ css
     margin-top: 0 !important;
     top: 0 !important;
 }
+
+/* =========================================================
+   APPLICATION VIEW DETAILS BUTTON
+   ========================================================= */
+
+.view-details-btn {
+    margin-top: 8px;
+    padding: 6px 12px;
+
+    border: 1px solid var(--primary);
+    border-radius: 6px;
+
+    background: white;
+    color: var(--primary);
+
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.view-details-btn:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* =========================================================
+   APPLICATION DETAILS POPUP
+   ========================================================= */
+
+.application-modal {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 9999;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(20, 30, 25, 0.45);
+}
+
+.application-modal.show {
+    display: flex;
+}
+
+.application-modal-box {
+    width: 100%;
+    max-width: 480px;
+
+    background: white;
+
+    border-radius: 14px;
+
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+
+    overflow: hidden;
+
+    animation: applicationModalShow 0.2s ease;
+}
+
+@keyframes applicationModalShow {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+.application-modal-header {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    padding: 20px 22px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.modal-label {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--primary);
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+}
+
+.application-modal-header h2 {
+    margin: 0;
+
+    color: var(--text-dark);
+
+    font-size: 18px;
+
+    font-weight: 750;
+}
+
+.modal-close-btn {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #f4f6f5;
+
+    color: var(--text-muted);
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.modal-close-btn:hover {
+    background: #e9eeeb;
+
+    color: var(--text-dark);
+}
+
+.application-modal-body {
+    padding: 22px;
+}
+
+.modal-detail {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid #edf0ee;
+}
+
+.modal-detail:first-child {
+    padding-top: 0;
+}
+
+.modal-detail span {
+    color: var(--text-muted);
+
+    font-size: 9px;
+
+    font-weight: 600;
+}
+
+.modal-detail strong {
+    color: var(--text-dark);
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+.modal-detail-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+.modal-detail-row .modal-detail {
+    border-bottom: none;
+}
+
+.application-modal-footer {
+    display: flex;
+
+    justify-content: flex-end;
+
+    padding: 14px 22px;
+
+    border-top: 1px solid var(--border);
+
+    background: #fafcfb;
+}
+
+.modal-close-action {
+    padding: 8px 18px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: var(--primary);
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.modal-close-action:hover {
+    background: var(--primary-dark);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .application-modal {
+        padding: 14px;
+    }
+
+    .application-modal-box {
+        max-width: 100%;
+    }
+
+    .modal-detail-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+}
+
+/* =========================================================
+   APPLICATION SUCCESS MESSAGE
+   ========================================================= */
+
+.application-success {
+    display: none;
+
+    max-width: 650px;
+
+    margin: 30px auto;
+
+    padding: 35px 30px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    text-align: center;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.application-success.show {
+    display: block;
+}
+
+.success-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 14px;
+
+    border-radius: 50%;
+
+    background: #e8f7ee;
+
+    color: #25804a;
+
+    font-size: 27px;
+}
+
+.success-label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--primary);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+}
+
+.application-success h2 {
+    margin: 0 0 8px;
+
+    color: var(--text-dark);
+
+    font-size: 21px;
+
+    font-weight: 750;
+}
+
+.application-success p {
+    margin: 0 auto 22px;
+
+    max-width: 450px;
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+.success-application-id {
+    display: inline-flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    padding: 12px 25px;
+
+    margin-bottom: 22px;
+
+    background: #f6faf7;
+
+    border: 1px solid #e0ebe4;
+
+    border-radius: 8px;
+}
+
+.success-application-id span {
+    color: var(--text-muted);
+
+    font-size: 9px;
+}
+
+.success-application-id strong {
+    color: var(--primary);
+
+    font-size: 14px;
+
+    letter-spacing: 0.5px;
+}
+
+.success-actions {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+}
+
+.success-primary-btn,
+.success-secondary-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    min-height: 36px;
+
+    padding: 8px 15px;
+
+    border-radius: 7px;
+
+    font-family: inherit;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.success-primary-btn {
+    background: var(--primary);
+
+    color: white;
+}
+
+.success-primary-btn:hover {
+    background: var(--primary-dark);
+
+    color: white;
+
+    transform: translateY(-1px);
+}
+
+.success-secondary-btn {
+    border: 1px solid var(--border);
+
+    background: white;
+
+    color: var(--text-dark);
+}
+
+.success-secondary-btn:hover {
+    background: #f6f8f7;
+
+    color: var(--text-dark);
+}

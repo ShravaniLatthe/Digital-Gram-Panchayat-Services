@@ -1,0 +1,513 @@
+/* =========================================================
+   DIGITAL GRAM PANCHAYAT
+   AI ASSISTANT PAGE
+========================================================= */
+
+
+/* ================= PAGE ================= */
+
+.ai-page {
+
+    padding: 35px;
+
+}
+
+
+/* ================= HEADER ================= */
+
+.ai-header {
+
+    margin-bottom: 25px;
+
+}
+
+
+.ai-header span {
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    color: #6c757d;
+
+}
+
+
+.ai-header h1 {
+
+    margin: 6px 0;
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+}
+
+
+.ai-header p {
+
+    margin: 0;
+
+    color: #6c757d;
+
+    font-size: 15px;
+
+}
+
+
+/* ================= AI CONTAINER ================= */
+
+.ai-container {
+
+    max-width: 900px;
+
+    background: #ffffff;
+
+    border: 1px solid #e7e7e7;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.04);
+
+}
+
+
+/* ================= AI TOP ================= */
+
+.ai-top {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 20px 24px;
+
+    border-bottom: 1px solid #eeeeee;
+
+}
+
+
+.ai-avatar {
+
+    width: 48px;
+
+    height: 48px;
+
+    border-radius: 13px;
+
+    background: #eaf6f0;
+
+    color: #087443;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 22px;
+
+}
+
+
+.ai-top h2 {
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    margin: 0 0 4px;
+
+}
+
+
+.ai-top p {
+
+    margin: 0;
+
+    font-size: 12px;
+
+    color: #087443;
+
+}
+
+
+.online-dot {
+
+    display: inline-block;
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #16a05d;
+
+    margin-right: 5px;
+
+}
+
+
+/* ================= CHAT ================= */
+
+.ai-chat {
+
+    height: 430px;
+
+    padding: 25px;
+
+    overflow-y: auto;
+
+    background: #fafbfc;
+
+}
+
+
+/* ================= MESSAGE ================= */
+
+.chat-message {
+
+    display: flex;
+
+    margin-bottom: 20px;
+
+}
+
+
+.chat-message.assistant {
+
+    justify-content: flex-start;
+
+}
+
+
+.chat-message.user {
+
+    justify-content: flex-end;
+
+}
+
+
+.chat-avatar {
+
+    width: 34px;
+
+    height: 34px;
+
+    border-radius: 10px;
+
+    background: #eaf6f0;
+
+    color: #087443;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-right: 10px;
+
+    flex-shrink: 0;
+
+}
+
+
+.chat-bubble {
+
+    max-width: 70%;
+
+    padding: 12px 15px;
+
+    border-radius: 13px;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+}
+
+
+.chat-bubble p {
+
+    margin: 0 0 7px;
+
+}
+
+
+.chat-bubble p:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+.chat-message.assistant
+.chat-bubble {
+
+    background: #ffffff;
+
+    border: 1px solid #e5e5e5;
+
+    color: #333;
+
+    border-top-left-radius: 4px;
+
+}
+
+
+.chat-message.user
+.chat-bubble {
+
+    background: #087443;
+
+    color: #ffffff;
+
+    border-top-right-radius: 4px;
+
+}
+
+
+/* ================= QUICK QUESTIONS ================= */
+
+.quick-questions {
+
+    padding: 16px 22px;
+
+    border-top: 1px solid #eeeeee;
+
+}
+
+
+.quick-questions > span {
+
+    display: block;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    color: #777;
+
+    margin-bottom: 10px;
+
+}
+
+
+.quick-question-buttons {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+}
+
+
+.quick-question {
+
+    border: 1px solid #dce2e5;
+
+    background: #ffffff;
+
+    color: #444;
+
+    border-radius: 20px;
+
+    padding: 7px 13px;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+}
+
+
+.quick-question:hover {
+
+    border-color: #087443;
+
+    color: #087443;
+
+    background: #f2faf6;
+
+}
+
+
+/* ================= INPUT ================= */
+
+.ai-input-area {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 15px 20px;
+
+    border-top: 1px solid #eeeeee;
+
+}
+
+
+.ai-input-area input {
+
+    flex: 1;
+
+    height: 44px;
+
+    border: 1px solid #dfe3e6;
+
+    border-radius: 9px;
+
+    padding: 0 14px;
+
+    outline: none;
+
+    font-size: 13px;
+
+}
+
+
+.ai-input-area input:focus {
+
+    border-color: #087443;
+
+    box-shadow:
+        0 0 0 3px rgba(8, 116, 67, 0.08);
+
+}
+
+
+.ai-send-button {
+
+    width: 44px;
+
+    height: 44px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #087443;
+
+    color: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+}
+
+
+.ai-send-button:hover {
+
+    background: #065c35;
+
+}
+
+
+/* ================= DISCLAIMER ================= */
+
+.ai-disclaimer {
+
+    padding: 0 20px 15px;
+
+    font-size: 11px;
+
+    color: #999;
+
+}
+
+
+.ai-disclaimer i {
+
+    margin-right: 4px;
+
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+    .ai-page {
+
+        padding: 20px;
+
+    }
+
+
+    .ai-header h1 {
+
+        font-size: 25px;
+
+    }
+
+
+    .ai-chat {
+
+        height: 400px;
+
+        padding: 18px;
+
+    }
+
+
+    .chat-bubble {
+
+        max-width: 85%;
+
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .ai-top {
+
+        padding: 16px;
+
+    }
+
+
+    .ai-chat {
+
+        height: 380px;
+
+    }
+
+
+    .quick-questions {
+
+        padding: 14px;
+
+    }
+
+
+    .ai-input-area {
+
+        padding: 12px;
+
+    }
+
+}
